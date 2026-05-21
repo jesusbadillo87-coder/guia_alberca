@@ -42,14 +42,14 @@
   "screenshots": [
     {
       "src": "Mantenimiento_diario.jpeg",
-      "sizes": "1024x768",
+      "sizes": "1024x1536",
       "type": "image/jpeg",
-      "form_factor": "wide",
+      "form_factor": "narrow",
       "label": "Rutina de Mantenimiento Preventivo"
     },
     {
       "src": "Mantenimiento_semanal.jpeg",
-      "sizes": "1024x768",
+      "sizes": "1024x1536",
       "type": "image/jpeg",
       "form_factor": "narrow",
       "label": "Monitoreo Semanal de Albercas"
