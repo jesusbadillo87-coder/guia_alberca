@@ -1,20 +1,58 @@
 {
   "name": "Guía Mantenimiento Albercas",
   "short_name": "Guía Albercas",
+  "description": "Guía interactiva para la gestión operativa, dosificación química y mantenimiento de albercas bajo el cumplimiento de la norma NOM-245-SSA1-2010.",
+  "lang": "es",
   "start_url": "index.html",
+  "scope": "./",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#003366",
   "theme_color": "#003366",
+  "categories": [
+    "education",
+    "utilities"
+  ],
   "icons": [
     {
       "src": "icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "Mantenimiento_diario.jpeg",
+      "sizes": "1024x768",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "Rutina de Mantenimiento Preventivo"
+    },
+    {
+      "src": "Mantenimiento_semanal.jpeg",
+      "sizes": "1024x768",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "Monitoreo Semanal de Albercas"
     }
   ]
 }
