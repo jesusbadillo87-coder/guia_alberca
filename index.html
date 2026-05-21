@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Digital: Mantenimiento de Albercas</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#003366">
+    <link rel="icon" type="image/png" href="icon-192.png">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="icon-water">💧</span>
+                    <h1>Guía Digital para el Mantenimiento de Albercas</h1>
+                </div>
+                <p class="subtitle"><a
+                        href="NORMA Oficial Mexicana NOM-245-SSA1-2010, Requisitos sanitarios y calidad del agua que deben cumplir las albercas.html"
+                        target="_blank" style="color: inherit; text-decoration: underline;"
+                        title="Ver Norma Oficial Mexicana">NOM-245-SSA1-2010</a></p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio" class="active" data-section="inicio">Inicio</a></li>
+                <li><a href="#higiene" data-section="higiene">Higiene y Seguridad</a></li>
+                <li><a href="#tipos" data-section="tipos">Tipos y Capacidad</a></li>
+                <li><a href="#partes" data-section="partes">Partes de la Alberca</a></li>
+                <li><a href="#mantenimiento" data-section="mantenimiento">Tipos de Mantenimiento</a></li>
+                <li><a href="#quimica" data-section="quimica">Control Químico</a></li>
+                <li><a href="#herramientas" data-section="herramientas">Herramientas</a></li>
+                <li><a href="#operacion" data-section="operacion">Operación de Equipos</a></li>
+                <li><a href="#gestion" data-section="gestion">Gestión Operativa</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <p>© 2026 Guía Digital</p>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content" id="main-content">
+            <!-- Sections will be injected/shown here -->
+            <section id="section-container">
+                <!-- Welcome Page -->
+                <div id="inicio" class="section active">
+                    <div class="hero">
+                        <div class="hero-content">
+                            <h2>Guía Digital para el Mantenimiento de Albercas</h2>
+                            <p>Garantizando la calidad sanitaria, seguridad y cumplimiento normativo.</p>
+                            <div class="hero-cards">
+                                <div class="card mini">
+                                    <h3>¿Qué es una alberca?</h3>
+                                    <p>Instalación hidráulica diseñada para el almacenamiento, tratamiento y uso
+                                        recreativo o deportivo del agua.</p>
+                                </div>
+                                <div class="card mini">
+                                    <h3>Mantenimiento</h3>
+                                    <p>Actividades preventivas y correctivas para conservar la calidad del agua y el
+                                        estado de las instalaciones.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-image">
+                            <img src="pool-hero.jpg" alt="Piscina cristalina" id="hero-img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sections placeholders (filled by JS or already here) -->
+                <div id="higiene" class="section"></div>
+                <div id="tipos" class="section"></div>
+                <div id="partes" class="section"></div>
+                <div id="mantenimiento" class="section"></div>
+                <div id="quimica" class="section"></div>
+                <div id="herramientas" class="section"></div>
+                <div id="operacion" class="section"></div>
+                <div id="gestion" class="section"></div>
+            </section>
+        </main>
+
+        <!-- Mobile Header -->
+        <header class="mobile-header">
+            <button id="menu-toggle" class="menu-btn">☰</button>
+            <div class="mobile-logo">Guía Albercas</div>
+        </header>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js');
+            });
+        }
+    </script>
+</body>
+
+</html>
