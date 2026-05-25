@@ -33,7 +33,6 @@ body {
     background-color: var(--bg-main);
     color: var(--text-dark);
     line-height: 1.6;
-    overflow-x: hidden;
 }
 
 /* App Layout */
@@ -313,6 +312,31 @@ tr:last-child td {
     }
     .grid-2, .grid-3 {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 1rem;
+        padding-top: 80px;
+    }
+    .card {
+        padding: 1.2rem;
+    }
+    .hero {
+        padding: 1.5rem;
+    }
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .hero-cards {
+        grid-template-columns: 1fr;
+    }
+    .section-title {
+        font-size: 1.5rem;
     }
 }
 

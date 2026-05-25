@@ -3,10 +3,10 @@
   "short_name": "Guía Albercas",
   "description": "Guía interactiva para la gestión operativa, dosificación química y mantenimiento de albercas bajo el cumplimiento de la norma NOM-245-SSA1-2010.",
   "lang": "es",
-  "start_url": "index.html",
+  "start_url": "./",
   "scope": "./",
-  "display": "standalone",
-  "orientation": "any",
+  "display": "fullscreen",
+  "orientation": "portrait",
   "background_color": "#003366",
   "theme_color": "#003366",
   "categories": [
