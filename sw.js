@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pool-guide-v4';
+const CACHE_NAME = 'pool-guide-v5';
 const ASSETS = [
   'index.html',
   'styles.css',
