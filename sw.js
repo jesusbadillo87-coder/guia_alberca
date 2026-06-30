@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pool-guide-v3';
+const CACHE_NAME = 'pool-guide-v4';
 const ASSETS = [
   'index.html',
   'styles.css',
@@ -6,7 +6,10 @@ const ASSETS = [
   'manifest.json',
   'pool-hero.jpg',
   'icon-192.png',
-  'cleaning-tools.png'
+  'cleaning-tools.png',
+  'Tabla_practica_dosificacion.jpeg',
+  'NOM-127-SSA1-2021.html',
+  'NOM-018-STPS-2015.html'
 ];
 
 self.addEventListener('install', (event) => {

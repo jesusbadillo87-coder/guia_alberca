@@ -9,26 +9,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const getSavedLogs = () => JSON.parse(localStorage.getItem('poolLogs') || '[]');
     const saveLogs = (logs) => localStorage.setItem('poolLogs', JSON.stringify(logs));
 
-    // Base de datos de dosificación de químicos (por cada 10,000 Litros de agua)
+    // Base de datos de dosificación de químicos de acuerdo a la Tabla Práctica (por cada 10,000 Litros de agua)
     const CHEMICALS_DB = {
-        hipo65: { name: "Hipoclorito de calcio granular al 65% (Kgs.)", factor: 15, baseUnit: "g", finalUnit: "Kg" },
-        hipo90: { name: "Hipoclorito de calcio al 90% granular", factor: 11, baseUnit: "g", finalUnit: "Kg" },
-        ac_clor: { name: "Ácido Clorhídrico (Lts.)", factor: 100, baseUnit: "ml", finalUnit: "L" },
-        ac_clor30: { name: "Ácido Clorhídrico 30% (Lts.)", factor: 150, baseUnit: "ml", finalUnit: "L" },
-        tricloro75: { name: "Ácido tricloro al 75% granular (Kgs.)", factor: 13, baseUnit: "g", finalUnit: "Kg" },
-        tricloro90: { name: "Ácido tricloro al 90% granular (Kgs.)", factor: 11, baseUnit: "g", finalUnit: "Kg" },
-        abrillantador: { name: "Abrillantador (Lts.)", factor: 5, baseUnit: "ml", finalUnit: "L" },
-        algicida: { name: "Algicida (Lts.)", factor: 10, baseUnit: "ml", finalUnit: "L" },
-        clarificador: { name: "Clarificador (Lts.)", factor: 5, baseUnit: "ml", finalUnit: "L" },
-        floculante: { name: "Floculante/precipitador (Lts.)", factor: 40, baseUnit: "ml", finalUnit: "L" },
-        sube_ph: { name: "Sube pH (Kgs.)", factor: 100, baseUnit: "g", finalUnit: "Kg" },
-        baja_ph: { name: "Baja pH (Kgs.)", factor: 100, baseUnit: "g", finalUnit: "Kg" },
-        dpd1: { name: "Pastillas DPD1 (para medir cloro residual) Pza.", factor: 1, baseUnit: "Pza", finalUnit: "Pza" },
-        rojo_fenol_pza: { name: "Pastillas Rojo Fenol (para medir pH) Pza.", factor: 1, baseUnit: "Pza", finalUnit: "Pza" },
-        bromo: { name: "Bromo al 60% (Kgs)", factor: 20, baseUnit: "g", finalUnit: "Kg" },
-        sal: { name: "Sal industrial (Kgs.)", factor: 4000, baseUnit: "g", finalUnit: "Kg" },
-        rojo_fenol_liq: { name: "Rojo fenol (Lts.)", factor: 1, baseUnit: "ml", finalUnit: "L" },
-        ortotolidina: { name: "Ortotolidina (Lts.)", factor: 1, baseUnit: "ml", finalUnit: "L" }
+        hipo65: { name: "Hipoclorito de calcio 65%", factor: 10, baseUnit: "g", finalUnit: "Kg" },
+        hipo90: { name: "Hipoclorito de calcio 90%", factor: 7, baseUnit: "g", finalUnit: "Kg" },
+        tricloro75: { name: "Ácido tricloro 75%", factor: 8, baseUnit: "g", finalUnit: "Kg" },
+        tricloro90: { name: "Ácido tricloro 90%", factor: 6, baseUnit: "g", finalUnit: "Kg" },
+        bromo: { name: "Bromo 60%", factor: 8, baseUnit: "g", finalUnit: "Kg" },
+        sube_ph: { name: "Sube pH (Carbonato de sodio)", factor: 100, baseUnit: "g", finalUnit: "Kg" },
+        baja_ph: { name: "Baja pH (Bisulfato de sodio)", factor: 100, baseUnit: "g", finalUnit: "Kg" },
+        ac_clor: { name: "Ácido clorhídrico 31-33%", factor: 125, baseUnit: "ml", finalUnit: "L" }, // Rango medio de 100 - 150 mL (125 mL)
+        ac_clor30: { name: "Ácido clorhídrico 30%", factor: 150, baseUnit: "ml", finalUnit: "L" }, // Rango medio de 120 - 180 mL (150 mL)
+        bicarbonato: { name: "Bicarbonato de sodio", factor: 180, baseUnit: "g", finalUnit: "Kg" },
+        algicida: { name: "Algicida", factor: 5, baseUnit: "ml", finalUnit: "L" },
+        clarificador: { name: "Clarificador", factor: 3, baseUnit: "ml", finalUnit: "L" },
+        floculante: { name: "Floculante / Precipitador", factor: 5, baseUnit: "ml", finalUnit: "L" },
+        abrillantador: { name: "Abrillantador", factor: 3, baseUnit: "ml", finalUnit: "L" }
     };
 
     // Navigation Logic
@@ -509,31 +505,25 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="form-group">
                                 <label>Sustancia</label>
                                 <select id="d-sub" class="form-control">
-                                    <optgroup label="Desinfectantes (Cloro / Bromo / Sal)">
-                                        <option value="hipo65">Hipoclorito de calcio granular al 65% (Kgs.)</option>
-                                        <option value="hipo90">Hipoclorito de calcio al 90% granular</option>
-                                        <option value="tricloro75">Ácido tricloro al 75% granular (Kgs.)</option>
-                                        <option value="tricloro90">Ácido tricloro al 90% granular (Kgs.)</option>
-                                        <option value="bromo">Bromo al 60% (Kgs)</option>
-                                        <option value="sal">Sal industrial (Kgs.)</option>
+                                    <optgroup label="Desinfectantes">
+                                        <option value="hipo65">Hipoclorito de calcio 65%</option>
+                                        <option value="hipo90">Hipoclorito de calcio 90%</option>
+                                        <option value="tricloro75">Ácido tricloro 75%</option>
+                                        <option value="tricloro90">Ácido tricloro 90%</option>
+                                        <option value="bromo">Bromo 60%</option>
                                     </optgroup>
-                                    <optgroup label="Reguladores de pH y Ácidos">
-                                        <option value="sube_ph">Sube pH (Kgs.)</option>
-                                        <option value="baja_ph">Baja pH (Kgs.)</option>
-                                        <option value="ac_clor">Ácido Clorhídrico (Lts.)</option>
-                                        <option value="ac_clor30">Ácido Clorhídrico 30% (Lts.)</option>
+                                    <optgroup label="Reguladores de pH y Estabilidad">
+                                        <option value="sube_ph">Sube pH (Carbonato de sodio)</option>
+                                        <option value="baja_ph">Baja pH (Bisulfato de sodio)</option>
+                                        <option value="ac_clor">Ácido clorhídrico 31-33%</option>
+                                        <option value="ac_clor30">Ácido clorhídrico 30%</option>
+                                        <option value="bicarbonato">Bicarbonato de sodio</option>
                                     </optgroup>
-                                    <optgroup label="Alguicidas, Coagulantes y Correctores">
-                                        <option value="algicida">Algicida (Lts.)</option>
-                                        <option value="clarificador">Clarificador (Lts.)</option>
-                                        <option value="abrillantador">Abrillantador (Lts.)</option>
-                                        <option value="floculante">Floculante/precipitador (Lts.)</option>
-                                    </optgroup>
-                                    <optgroup label="Reactivos e Insumos de Prueba">
-                                        <option value="dpd1">Pastillas DPD1 (cloro residual) Pza.</option>
-                                        <option value="rojo_fenol_pza">Pastillas Rojo Fenol (pH) Pza.</option>
-                                        <option value="rojo_fenol_liq">Rojo fenol (Lts.)</option>
-                                        <option value="ortotolidina">Ortotolidina (Lts.)</option>
+                                    <optgroup label="Alguicidas y Clarificadores">
+                                        <option value="algicida">Algicida</option>
+                                        <option value="clarificador">Clarificador</option>
+                                        <option value="floculante">Floculante / Precipitador</option>
+                                        <option value="abrillantador">Abrillantador</option>
                                     </optgroup>
                                 </select>
                             </div>
