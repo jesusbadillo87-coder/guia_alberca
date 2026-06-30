@@ -67,6 +67,17 @@ document.addEventListener('DOMContentLoaded', () => {
         sidebar.classList.toggle('open');
     });
 
+    // Escape key closes dosif lightbox
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const lb = document.getElementById('dosif-lightbox');
+            if (lb && lb.style.display === 'flex') {
+                lb.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        }
+    });
+
     function goToSection(id) {
         const link = document.querySelector(`.nav-links a[data-section="${id}"]`);
         if (link) link.click();
@@ -551,6 +562,73 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
 
+            <!-- Tabla Práctica de Dosificación -->
+            <div class="card" id="dosif-card" style="margin-top: 1rem; border-top: 4px solid #0ea5e9; background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%); box-shadow: 0 4px 20px rgba(14,165,233,0.12); overflow: hidden; transition: var(--transition);">
+                <!-- Encabezado de la tarjeta -->
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="width: 44px; height: 44px; background: linear-gradient(135deg, #0369a1, #0ea5e9); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; box-shadow: 0 3px 8px rgba(3,105,161,0.35);">🧪</div>
+                        <div>
+                            <h3 style="margin: 0; font-size: 1.1rem; color: #0369a1; font-weight: 700;">Tabla Práctica de Dosificación</h3>
+                            <p style="margin: 2px 0 0; font-size: 0.78rem; color: #64748b;">Productos químicos · Por cada 10,000 L de agua</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;">
+                        <span style="background: #e0f2fe; color: #0369a1; font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; border: 1px solid #bae6fd;">Referencia rápida</span>
+                        <button id="btn-dosif-toggle" onclick="toggleDosifTable()" style="background: linear-gradient(135deg, #0369a1, #0ea5e9); color: white; border: none; border-radius: 8px; padding: 7px 14px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 5px; box-shadow: 0 2px 8px rgba(3,105,161,0.3);">
+                            <span id="dosif-btn-icon">🔍</span> <span id="dosif-btn-text">Ver tabla</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Descripción informativa con badges -->
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                    <span style="background: #dcfce7; color: #15803d; font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; border: 1px solid #bbf7d0;">🟢 Desinfección</span>
+                    <span style="background: #fef9c3; color: #854d0e; font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; border: 1px solid #fde68a;">🟡 Regulación pH</span>
+                    <span style="background: #ede9fe; color: #6d28d9; font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; border: 1px solid #ddd6fe;">🟣 Estabilidad Química</span>
+                    <span style="background: #fee2e2; color: #b91c1c; font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; border: 1px solid #fecaca;">🔴 Control de Algas</span>
+                    <span style="background: #e0f2fe; color: #0369a1; font-size: 0.72rem; font-weight: 600; padding: 3px 10px; border-radius: 20px; border: 1px solid #bae6fd;">🔵 Clarificación</span>
+                </div>
+
+                <!-- Panel colapsable con la imagen -->
+                <div id="dosif-panel" style="display: none; animation: fadeSlideDown 0.35s ease;">
+                    <div style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 24px rgba(0,0,0,0.13); border: 1px solid #e2e8f0; background: #fff;">
+                        <!-- Barra superior decorativa -->
+                        <div style="height: 4px; background: linear-gradient(90deg, #0369a1, #0ea5e9, #38bdf8, #7dd3fc); border-radius: 12px 12px 0 0;"></div>
+                        <img 
+                            src="Tabla_practica_dosificacion.jpeg" 
+                            alt="Tabla Práctica de Dosificación de Productos Químicos" 
+                            id="dosif-img"
+                            style="width: 100%; height: auto; display: block; cursor: zoom-in; transition: transform 0.3s ease;"
+                            onclick="openDosifLightbox()"
+                            title="Clic para ampliar"
+                        >
+                    </div>
+                    <p style="text-align: center; margin-top: 0.6rem; font-size: 0.75rem; color: #94a3b8; display: flex; align-items: center; justify-content: center; gap: 4px;">
+                        <span>🔎</span> Haz clic en la tabla para ampliarla a pantalla completa
+                    </p>
+                </div>
+
+                <!-- Divider cuando está cerrado -->
+                <div id="dosif-hint" style="background: linear-gradient(135deg, #f0f9ff, #e0f2fe); border: 1px dashed #bae6fd; border-radius: 10px; padding: 0.85rem 1rem; display: flex; align-items: center; gap: 10px; cursor: pointer;" onclick="toggleDosifTable()">
+                    <span style="font-size: 1.5rem;">📋</span>
+                    <div>
+                        <p style="margin: 0; font-size: 0.85rem; font-weight: 600; color: #0369a1;">Consulta las dosis recomendadas por producto</p>
+                        <p style="margin: 2px 0 0; font-size: 0.75rem; color: #64748b;">Hipoclorito · Tricloro · Bromo · Ácidos · Algicidas · Clarificadores...</p>
+                    </div>
+                    <span style="margin-left: auto; font-size: 1.2rem; color: #0ea5e9;">▼</span>
+                </div>
+            </div>
+
+            <!-- Modal Lightbox para la imagen -->
+            <div id="dosif-lightbox" onclick="closeDosifLightbox()" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.88); z-index:9999; align-items:center; justify-content:center; padding:1rem; cursor:zoom-out; backdrop-filter: blur(4px);">
+                <div style="position:relative; max-width:1100px; width:100%; animation: fadeSlideDown 0.3s ease;">
+                    <button onclick="event.stopPropagation(); closeDosifLightbox()" style="position:absolute; top:-14px; right:-14px; background:#0369a1; color:white; border:none; border-radius:50%; width:36px; height:36px; font-size:1.1rem; cursor:pointer; z-index:10000; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 10px rgba(0,0,0,0.4);">✕</button>
+                    <img src="Tabla_practica_dosificacion.jpeg" alt="Tabla Práctica de Dosificación" style="width:100%; height:auto; border-radius:12px; box-shadow:0 8px 40px rgba(0,0,0,0.5);">
+                    <p style="text-align:center; color:#94a3b8; font-size:0.8rem; margin-top:0.6rem;">Tabla Práctica de Dosificación — Por cada 10,000 L de agua de alberca</p>
+                </div>
+            </div>
+
             <!-- Historial -->
             <div class="card" style="margin-top: 1rem;">
                 <h3>📋 Historial de Registros</h3>
@@ -562,6 +640,43 @@ document.addEventListener('DOMContentLoaded', () => {
         renderLogHistory();
     }
 
+
+    window.toggleDosifTable = () => {
+        const panel = document.getElementById('dosif-panel');
+        const hint  = document.getElementById('dosif-hint');
+        const btnIcon = document.getElementById('dosif-btn-icon');
+        const btnText = document.getElementById('dosif-btn-text');
+        if (!panel) return;
+
+        const isOpen = panel.style.display === 'block';
+        if (isOpen) {
+            panel.style.display = 'none';
+            hint.style.display  = 'flex';
+            btnIcon.textContent = '🔍';
+            btnText.textContent = 'Ver tabla';
+        } else {
+            panel.style.display = 'block';
+            hint.style.display  = 'none';
+            btnIcon.textContent = '✖';
+            btnText.textContent = 'Ocultar';
+        }
+    };
+
+    window.openDosifLightbox = () => {
+        const lb = document.getElementById('dosif-lightbox');
+        if (lb) {
+            lb.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
+    window.closeDosifLightbox = () => {
+        const lb = document.getElementById('dosif-lightbox');
+        if (lb) {
+            lb.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    };
 
     window.calcDose = () => {
         const vol = parseFloat(document.getElementById('d-vol').value);

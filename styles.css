@@ -143,6 +143,11 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes fadeSlideDown {
+    from { opacity: 0; transform: translateY(-12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
 /* Hero Section */
 .hero {
     display: grid;
@@ -374,3 +379,13 @@ tr:last-child td {
     transform: scale(1.02);
 }
 
+/* Dosification Table Image Hover */
+#dosif-img:hover {
+    transform: scale(1.01);
+}
+
+/* Dosification Toggle Button Hover */
+#btn-dosif-toggle:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(3, 105, 161, 0.45) !important;
+}
