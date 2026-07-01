@@ -23,6 +23,8 @@ try {
                     ".png" { "image/png" }
                     ".jpg" { "image/jpeg" }
                     ".jpeg" { "image/jpeg" }
+                    ".pdf" { "application/pdf" }
+                    ".webp" { "image/webp" }
                     default { "application/octet-stream" }
                 }
                 $response.ContentType = $contentType
