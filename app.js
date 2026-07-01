@@ -135,6 +135,76 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="alert warning" style="margin-top: 1.5rem; background: #fffaf0; padding: 1rem; border-left: 4px solid var(--warning); border-radius: 4px;">
                     <strong>⚠️ Seguridad con Químicos:</strong> Manipular con guantes, gafas y mascarilla. Almacenar en lugares secos y frescos.
                 </div>
+
+                <!-- ACCIONES QUE DEBEN EVITARSE -->
+                <div style="margin-top: 1.5rem;">
+                    <h3 style="color: #b91c1c; display:flex; align-items:center; gap:0.5rem; margin-bottom:1rem;">🚫 Acciones que Deben Evitarse Durante el Mantenimiento</h3>
+                    <div class="grid-2" style="gap:1rem;">
+
+                        <div style="background:#fff1f2; border:1px solid #fecdd3; border-radius:10px; padding:1rem;">
+                            <h4 style="color:#b91c1c; margin-bottom:0.5rem;">1. Mezclar químicos directamente</h4>
+                            <p style="font-size:0.88rem;">Nunca mezclar sustancias como <strong>Cloro con Ácido clorhídrico</strong>. Puede generar <strong>gases tóxicos</strong> (cloro gaseoso).</p>
+                        </div>
+
+                        <div style="background:#fff1f2; border:1px solid #fecdd3; border-radius:10px; padding:1rem;">
+                            <h4 style="color:#b91c1c; margin-bottom:0.5rem;">2. Aplicarlos sin diluir (cuando se requiere)</h4>
+                            <p style="font-size:0.88rem;">Productos como ácidos o floculantes deben diluirse antes. Evita daños en el recubrimiento y reacciones bruscas.</p>
+                        </div>
+
+                        <div style="background:#fff1f2; border:1px solid #fecdd3; border-radius:10px; padding:1rem;">
+                            <h4 style="color:#b91c1c; margin-bottom:0.5rem;">3. No usar protección personal</h4>
+                            <p style="font-size:0.88rem;">Evita trabajar sin:<br>🧤 Guantes &nbsp;•&nbsp; 🥽 Lentes de seguridad &nbsp;•&nbsp; 😷 Cubrebocas (en polvo o vapores)</p>
+                        </div>
+
+                        <div style="background:#fff1f2; border:1px solid #fecdd3; border-radius:10px; padding:1rem;">
+                            <h4 style="color:#b91c1c; margin-bottom:0.5rem;">4. Dosificar "al tanteo"</h4>
+                            <p style="font-size:0.88rem;">Nunca aplicar químicos sin medir previamente <strong>pH y cloro</strong>. Sobredosificar puede irritar piel y ojos o dañar el agua.</p>
+                        </div>
+
+                        <div style="background:#fff1f2; border:1px solid #fecdd3; border-radius:10px; padding:1rem;">
+                            <h4 style="color:#b91c1c; margin-bottom:0.5rem;">5. Aplicar varios químicos al mismo tiempo</h4>
+                            <p style="font-size:0.88rem;">Ejemplo: Sulfato de aluminio + cloro. Puede reducir la efectividad o generar reacciones indeseadas.</p>
+                        </div>
+
+                        <div style="background:#fff1f2; border:1px solid #fecdd3; border-radius:10px; padding:1rem;">
+                            <h4 style="color:#b91c1c; margin-bottom:0.5rem;">6. Almacenarlos incorrectamente</h4>
+                            <p style="font-size:0.88rem;">Evitar: lugares húmedos, exposición al sol y envases abiertos. El <strong>Hipoclorito de sodio</strong> pierde efectividad con el tiempo.</p>
+                        </div>
+
+                        <div style="background:#fff1f2; border:1px solid #fecdd3; border-radius:10px; padding:1rem;">
+                            <h4 style="color:#b91c1c; margin-bottom:0.5rem;">7. Inhalar vapores o polvo</h4>
+                            <p style="font-size:0.88rem;">Especial cuidado con: <strong>Cloro</strong> y <strong>Ácido clorhídrico</strong>. Pueden irritar vías respiratorias.</p>
+                        </div>
+
+                        <div style="background:#fff1f2; border:1px solid #fecdd3; border-radius:10px; padding:1rem;">
+                            <h4 style="color:#b91c1c; margin-bottom:0.5rem;">8. Agregar químicos con personas dentro</h4>
+                            <p style="font-size:0.88rem;">Siempre aplicar cuando la alberca esté <strong>vacía de bañistas</strong>. Evita irritaciones y accidentes.</p>
+                        </div>
+
+                        <div style="background:#fff1f2; border:1px solid #fecdd3; border-radius:10px; padding:1rem;">
+                            <h4 style="color:#b91c1c; margin-bottom:0.5rem;">9. No respetar tiempos de espera</h4>
+                            <p style="font-size:0.88rem;">Después de aplicar químicos: esperar <strong>mínimo 30 min – 2 horas</strong> según el producto antes de permitir el acceso.</p>
+                        </div>
+
+                        <div style="background:#fff1f2; border:1px solid #fecdd3; border-radius:10px; padding:1rem;">
+                            <h4 style="color:#b91c1c; margin-bottom:0.5rem;">10. Usar recipientes contaminados</h4>
+                            <p style="font-size:0.88rem;">No reutilizar envases de otros químicos. Puede haber <strong>reacciones peligrosas</strong>.</p>
+                        </div>
+
+                    </div>
+
+                    <!-- Reglas de oro -->
+                    <div style="margin-top:1.2rem; background: linear-gradient(135deg, #1e3a5f, #2563eb); color:white; border-radius:12px; padding:1.2rem 1.5rem;">
+                        <h4 style="color:#fbbf24; margin-bottom:0.8rem; font-size:1rem;">⭐ Reglas Básicas de Oro</h4>
+                        <div style="display:flex; flex-wrap:wrap; gap:0.6rem; font-size:0.88rem;">
+                            <span style="background:rgba(255,255,255,0.15); padding:5px 12px; border-radius:20px;">1️⃣ Primero medir, luego dosificar</span>
+                            <span style="background:rgba(255,255,255,0.15); padding:5px 12px; border-radius:20px;">2️⃣ Aplicar uno por uno</span>
+                            <span style="background:rgba(255,255,255,0.15); padding:5px 12px; border-radius:20px;">3️⃣ Mantener circulación del agua</span>
+                            <span style="background:rgba(255,255,255,0.15); padding:5px 12px; border-radius:20px;">4️⃣ Leer siempre la etiqueta del producto</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         `;
     }
@@ -347,19 +417,90 @@ document.addEventListener('DOMContentLoaded', () => {
                     </table>
                 </div>
             </div>
-            <div class="grid-3">
-                <div class="card" style="text-align: center;">
-                    <img src="Tiras_reactivas.jpeg" alt="Tiras Reactivas" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
-                    <h4>Tiras Reactivas</h4><p>Rápidas, menor precisión.</p>
+            <!-- Instrumentos de Medición -->
+            <div class="card" style="margin-top: 1.5rem;">
+                <h3 style="display:flex; align-items:center; gap:0.5rem;">📏 Instrumentos de Medición</h3>
+                <p style="color:var(--text-light); margin-bottom:1.5rem;">Para mantener una alberca en condiciones óptimas, es necesario medir regularmente parámetros como pH, cloro, alcalinidad y dureza. Esto se realiza con diferentes herramientas según el nivel de precisión requerido.</p>
+
+                <div class="grid-3" style="gap:1.2rem;">
+
+                    <!-- Tiras Reactivas -->
+                    <div class="card" style="border: 1px solid #e2e8f0; padding: 1.2rem; border-radius: 10px; text-align:center;">
+                        <img src="Tiras_reactivas.jpeg" alt="Tiras Reactivas" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                        <h4 style="color:var(--primary); margin-bottom:0.3rem;">🧪 Tiras Reactivas</h4>
+                        <p style="font-size:0.82rem; color:var(--text-light); margin-bottom:0.8rem; font-style:italic;">Uso rápido y práctico</p>
+                        <div style="text-align:left; font-size:0.88rem;">
+                            <p style="margin-bottom:0.4rem;"><strong>¿Cómo se usan?</strong><br>Se sumergen en el agua durante 1–2 segundos y luego se comparan los colores con una escala.</p>
+                            <p style="margin-bottom:0.4rem;"><strong>¿Qué miden?</strong><br>pH, cloro, alcalinidad, dureza, ácido cianúrico.</p>
+                            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.6rem;">
+                                <span style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:20px; font-size:0.78rem;">✔ Fáciles de usar</span>
+                                <span style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:20px; font-size:0.78rem;">✔ Económicas</span>
+                                <span style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:20px; font-size:0.78rem;">✔ Resultados en segundos</span>
+                                <span style="background:#fee2e2; color:#991b1b; padding:2px 8px; border-radius:20px; font-size:0.78rem;">✖ Menor precisión</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kits de análisis -->
+                    <div class="card" style="border: 1px solid #e2e8f0; padding: 1.2rem; border-radius: 10px; text-align:center;">
+                        <img src="Colorimetro.jpeg" alt="Kits Líquidos" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                        <h4 style="color:var(--primary); margin-bottom:0.3rem;">🧫 Kits de Análisis</h4>
+                        <p style="font-size:0.82rem; color:var(--text-light); margin-bottom:0.8rem; font-style:italic;">Uso más preciso y confiable</p>
+                        <div style="text-align:left; font-size:0.88rem;">
+                            <p style="margin-bottom:0.4rem;"><strong>¿Cómo se usan?</strong><br>Se llena un tubo con agua de la alberca y se agregan gotas de reactivos que cambian de color.</p>
+                            <p style="margin-bottom:0.4rem;"><strong>¿Qué miden?</strong><br>Principalmente pH y cloro (libre y total).</p>
+                            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.6rem;">
+                                <span style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:20px; font-size:0.78rem;">✔ Mayor precisión</span>
+                                <span style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:20px; font-size:0.78rem;">✔ Resultados confiables</span>
+                                <span style="background:#fee2e2; color:#991b1b; padding:2px 8px; border-radius:20px; font-size:0.78rem;">✖ Requiere más tiempo</span>
+                                <span style="background:#fee2e2; color:#991b1b; padding:2px 8px; border-radius:20px; font-size:0.78rem;">✖ Manejo cuidadoso</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Equipos Digitales -->
+                    <div class="card" style="border: 1px solid #e2e8f0; padding: 1.2rem; border-radius: 10px; text-align:center;">
+                        <img src="Herramienta_digital.jpeg" alt="Digitales" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+                        <h4 style="color:var(--primary); margin-bottom:0.3rem;">📱 Equipos Digitales</h4>
+                        <p style="font-size:0.82rem; color:var(--text-light); margin-bottom:0.8rem; font-style:italic;">Uso profesional y de alta precisión</p>
+                        <div style="text-align:left; font-size:0.88rem;">
+                            <p style="margin-bottom:0.4rem;"><strong>¿Cómo se usan?</strong><br>Se introduce un sensor en el agua y el equipo muestra el resultado en pantalla.</p>
+                            <p style="margin-bottom:0.4rem;"><strong>¿Qué miden?</strong><br>pH, cloro, ORP (potencial de oxidación), conductividad, temperatura.</p>
+                            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.6rem;">
+                                <span style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:20px; font-size:0.78rem;">✔ Alta precisión</span>
+                                <span style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:20px; font-size:0.78rem;">✔ Lectura inmediata</span>
+                                <span style="background:#dcfce7; color:#166534; padding:2px 8px; border-radius:20px; font-size:0.78rem;">✔ Ideal para albercas grandes</span>
+                                <span style="background:#fee2e2; color:#991b1b; padding:2px 8px; border-radius:20px; font-size:0.78rem;">✖ Costo elevado</span>
+                                <span style="background:#fee2e2; color:#991b1b; padding:2px 8px; border-radius:20px; font-size:0.78rem;">✖ Requieren calibración</span>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="card" style="text-align: center;">
-                    <img src="Colorimetro.jpeg" alt="Kits Líquidos" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
-                    <h4>Kits Líquidos</h4><p>Mayor precisión, uso confiable.</p>
+
+                <!-- Pasos básicos para medir correctamente -->
+                <div style="margin-top:1.8rem; background:#f0f9ff; border-radius:10px; padding:1.2rem; border-left:4px solid var(--primary);">
+                    <h4 style="color:var(--primary); margin-bottom:1rem;">📋 Pasos Básicos para Medir Correctamente</h4>
+                    <ol style="padding-left:1.4rem; font-size:0.9rem; display:grid; gap:0.4rem;">
+                        <li>Tomar la muestra a <strong>30 cm de profundidad</strong></li>
+                        <li>Evitar zonas cercanas a retornos o skimmers</li>
+                        <li>Usar la herramienta elegida (tira, kit o equipo digital)</li>
+                        <li>Comparar o leer resultados</li>
+                        <li>Registrar los valores obtenidos</li>
+                    </ol>
                 </div>
-                <div class="card" style="text-align: center;">
-                    <img src="Herramienta_digital.jpeg" alt="Digitales" style="width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
-                    <h4>Digitales</h4><p>Uso profesional, alta precisión.</p>
+
+                <!-- Recomendaciones de medición -->
+                <div style="margin-top:1.2rem; background:#fefce8; border-radius:10px; padding:1.2rem; border-left:4px solid var(--warning);">
+                    <h4 style="color:#92400e; margin-bottom:0.8rem;">💡 Recomendaciones</h4>
+                    <ul style="padding-left:1.2rem; font-size:0.9rem; display:grid; gap:0.3rem;">
+                        <li>Medir <strong>pH y cloro diariamente</strong></li>
+                        <li>Revisar <strong>alcalinidad y dureza</strong> 1 vez por semana</li>
+                        <li>Llevar un <strong>registro de control</strong></li>
+                        <li>Calibrar equipos digitales regularmente</li>
+                    </ul>
                 </div>
+
             </div>
         `;
     }
