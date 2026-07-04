@@ -2,7 +2,7 @@
 // Cada vez que se actualice la app este número cambia automáticamente.
 // El navegador detecta el cambio y descarga la versión nueva en todos los
 // dispositivos sin que el usuario tenga que borrar datos manualmente.
-const CACHE_VERSION = 'pool-guide-v6';
+const CACHE_VERSION = 'pool-guide-v7';
 
 // ─── ARCHIVOS A CACHEAR ───────────────────────────────────────────────────────
 const ASSETS = [
